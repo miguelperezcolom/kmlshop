@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{ partial "head.html" . }}
+
+</head>
+
+<body>
+
+
+{{ partial "header.html" . }}
+
+
+
+<div class="container">
+
+
+    <h1 class="header center orange-text">Welcome to your KML shop.</h1>
+
+    <div class="row center">
+        <h5 class="header col s12 light">Your KML files for Esporles.</h5>
+    </div>
+
+
+
+{{ range .Sections }}
+
+
+    {{ if eq .Title "Favoritos" }}
+
+    <div class="row"><div class="col s12 m4"><h3>Best sellers</h3></div></div>
+
+
+    <div class="row">
+
+        {{ range .Pages }}
+        <div class="col s12 m4">
+            <a href="{{ replace .Permalink "favoritos" "rutas" }}">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/{{ .Params.mainimage }}">
+                        <span class="card-title">{{ .Title }}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ .Params.description }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {{ end }}
+    </div>
+
+
+    {{ end }}
+
+    {{ end }}
+
+
+
+</div>
+
+
+
+{{ partial "footer.html" . }}
+
+</body>
+</html>
+        

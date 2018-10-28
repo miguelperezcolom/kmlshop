@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{ partial "head.html" . }}
+
+</head>
+
+<body>
+
+
+{{ partial "header.html" . }}
+
+
+
+<div class="container">
+
+
+
+    <h1>Our routes</h1>
+
+
+
+    <div class="row">
+        {{ range .Pages }}
+
+
+        <div class="col s12 m4">
+            <a href="{{ .Permalink }}">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/{{ .Params.mainimage }}">
+                    <span class="card-title">{{ .Title }}</span>
+                </div>
+                <div class="card-content">
+                    <p>{{ .Params.description }}</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        {{ end }}
+    </div>
+
+
+</div>
+
+
+
+{{ partial "footer.html" . }}
+
+</body>
+</html>
+        
