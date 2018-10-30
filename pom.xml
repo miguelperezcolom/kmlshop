@@ -43,16 +43,33 @@
     <dependency>
       <groupId>io.mateu</groupId>
       <artifactId>mdd-vaadin</artifactId>
-      <version>0.0.5-SNAPSHOT</version>
+      <version>0.0.6-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>io.mateu</groupId>
       <artifactId>mdd-vaadin</artifactId>
-      <version>0.0.5-SNAPSHOT</version>
+      <version>0.0.6-SNAPSHOT</version>
       <type>war</type>
     </dependency>
+
+
+
+
+
+
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.5</version>
+    </dependency>
+
+
+
+
   </dependencies>
 
 

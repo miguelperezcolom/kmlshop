@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -30,6 +31,9 @@ public class Sale {
     private LocalDateTime confirmed;
 
     private LocalDateTime sent;
+
+    @ManyToOne@NotNull
+    private Route route;
 
 
 }
