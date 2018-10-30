@@ -35,7 +35,9 @@
                         <input type='hidden' name='notify_url' value='{{ .Params.notify_url }}'>
                         <input type='hidden' name='item_number' value='{{ .Params.item_number }}'>
                         <input type='hidden' name='item_name' value='{{ .Params.item_name }}'>
-                        <input type='hidden' name='amount' value='{{ .Params.item_value }}'>
+                        <input type='hidden' name='oldamount' value='{{ .Params.item_value }}'>
+                        <input type='hidden' name='amount' value='0.01'>
+                        <input type='hidden' name='email' value=''>
                         <input type='hidden' name='currency_code' value='EUR'>
                         <!-- Display the payment button. -->
                         <input type='image' name='submit' border='0' src='https://www.paypalobjects.com/webstatic/en_US/i/buttons/buy-logo-large.png' alt="Buy now with PayPal" />
