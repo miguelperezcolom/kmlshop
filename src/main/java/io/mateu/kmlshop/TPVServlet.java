@@ -116,17 +116,23 @@ public class TPVServlet extends HttpServlet {
                     email.addTo((!Strings.isNullOrEmpty(System.getProperty("allemailsto")))?System.getProperty("allemailsto"):s.getEmail());
 
 
-                    if (s.getRoute().getKml() != null) {
+                    if (s.getRoute().getKml() != null) try {
                         File attachment = new File(s.getRoute().getKml().toFileLocator().getTmpPath());
                         if (attachment != null) email.attach(attachment);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    if (s.getRoute().getArchivo1() != null) {
+                    if (s.getRoute().getArchivo1() != null) try {
                         File attachment = new File(s.getRoute().getArchivo1().toFileLocator().getTmpPath());
                         if (attachment != null) email.attach(attachment);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    if (s.getRoute().getArchivo2() != null) {
+                    if (s.getRoute().getArchivo2() != null) try {
                         File attachment = new File(s.getRoute().getArchivo2().toFileLocator().getTmpPath());
                         if (attachment != null) email.attach(attachment);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
                     //email.attach(new ByteArrayDataSource(new XMLOutputter(Format.getPrettyFormat()).outputString(IslandbusHelper.toPrivateXml(getPurchaseOrders())).getBytes(), "text/xml"), "private.xml", "xml for privates");
