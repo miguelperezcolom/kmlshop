@@ -1,5 +1,6 @@
 package io.mateu.kmlshop.model;
 
+import io.mateu.mdd.core.annotations.Password;
 import io.mateu.mdd.core.annotations.TextArea;
 import io.mateu.mdd.core.model.config.AppConfig;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class ShopAppConfig extends AppConfig {
 
     private String githubUser;
 
+    @Password
     private String githubPassword;
 
 
