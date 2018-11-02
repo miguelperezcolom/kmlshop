@@ -123,8 +123,10 @@ public class Route {
                 Helper.escribirFichero(dir.getAbsolutePath() + "/web/content/rutas/" + Helper.urlize(r.getName()) + ".md", r.toMD());
                 if (r.isBestSeller()) Helper.escribirFichero(dir.getAbsolutePath() + "/web/content/bestsellers/" + Helper.urlize(r.getName()) + ".md", r.toMD());
 
-                if (r.getImage() != null) {
+                if (r.getImage() != null) try {
                     Helper.escribirFichero(dir.getAbsolutePath() + "/web/static/imagesfromdatabase/" + r.getImage().getName(), r.getImage().getBytes());
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 
