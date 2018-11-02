@@ -1,5 +1,6 @@
 package io.mateu.kmlshop.model;
 
+import com.google.common.base.Strings;
 import io.mateu.mdd.core.CSS;
 import io.mateu.mdd.core.annotations.Action;
 import io.mateu.mdd.core.annotations.NotInList;
@@ -149,7 +150,7 @@ public class Route {
                 "title: \"" + getName() + "\"\n" +
                 "date: 2018-10-27T11:59:33+02:00\n";
 
-        if (getImage() != null) md += "mainimage: \"imagesfromdatabase/" + getImage().getName() + "\"\n";
+        if (getImage() != null && !Strings.isNullOrEmpty(getImage().getName())) md += "mainimage: \"imagesfromdatabase/" + getImage().getName() + "\"\n";
 
         md += "description: \"" + ((getDescription() != null)?getDescription().replaceAll("\"", "\\\""):"") + "\"\n" +
                 "item_name: \"" + getName().replaceAll("\"", "\\\"") + "\"\n" +
